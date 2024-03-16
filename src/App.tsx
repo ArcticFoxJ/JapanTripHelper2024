@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const locations = [
+  {
+    name: 'Tokyo',
+  },
+  {
+    name: 'Osaka',
+  },
+  {
+    name: 'Kyoto',
+  },
+  {
+    name: 'Nara',
+  },
+  {
+    name: 'Hakone',
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1 className="mb-2 text-5xl font-medium leading-tight text-center">
+        Japan Trip 2024
+      </h1>
+      <div className="text-center">
+        <label>Locations:</label>{' '}
+        {locations.map((location) => (
+          <button className="ms-2 rounded-lg bg-slate-400 px-4 py-1 font-medium transition duration-150 ease-in-out hover:bg-sky-600">
+            {location.name}
+          </button>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div>TODO: map</div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
